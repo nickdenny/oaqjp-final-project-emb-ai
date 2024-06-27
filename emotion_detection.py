@@ -16,7 +16,7 @@ def emotion_detector(text_to_analyse):
             'fear': emotions['fear'],
             'joy': emotions['joy'],
             'sadness': emotions['sadness'],
-            'dominant_emotion': max(emotions, key=lambda x:x[1])
+            'dominant_emotion': max(emotions, key = lambda x:emotions[x])
         }
     return emotions_response
 
