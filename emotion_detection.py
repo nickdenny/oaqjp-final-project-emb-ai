@@ -11,25 +11,25 @@ def emotion_detector(text_to_analyse):
     if response.status_code == 200:
         emotions = formatted_response['emotionPredictions'][0]['emotion']
         emotions_response = {
-		'anger': emotions['anger'],
-		'disgust': emotions['disgust'],
-		'fear': emotions['fear'],
-		'joy': emotions['joy'],
-		'sadness': emotions['sadness'],
-		'dominant_emotion': max(emotions, key=lambda x:x[1])
-		}
-	return emotions_response
+            'anger': emotions['anger'],
+            'disgust': emotions['disgust'],
+            'fear': emotions['fear'],
+            'joy': emotions['joy'],
+            'sadness': emotions['sadness'],
+            'dominant_emotion': max(emotions, key=lambda x:x[1])
+        }
+    return emotions_response
 
     if response.status_code == 400:
         emotions = formatted_response['emotionPredictions'][0]['emotion']
         emotions_response = {
-		'anger': None,
-		'disgust': None,
-		'fear': None,
-		'joy': None,
-		'sadness': None,
-		'dominant_emotion': None
-		}
-	return emotions_response
+            'anger': None,
+            'disgust': None,
+            'fear': None,
+            'joy': None,
+            'sadness': None,
+            'dominant_emotion': None
+        }
+    return emotions_response
 
     return None
